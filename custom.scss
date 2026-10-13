@@ -195,11 +195,27 @@ h2 {
     color: var(--fg);
   }
 
-  // Inside the top bar it sits at the right end and moves with the bar.
+  // Inside the top bar it is pinned to the right end, outside the row of links,
+  // so it does not push them off centre.
   &.in-bar {
-    position: static;
-    margin-left: auto;
-    flex: none;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+// Top bar: links in the middle.
+.navbar {
+  .navbar-container {
+    position: relative;
+  }
+
+  .navbar-collapse {
+    justify-content: center;
+  }
+
+  .navbar-nav {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
@@ -359,4 +375,8 @@ main.content:has(> .hero) {
       font-size: clamp(1.8rem, 4vw, 3rem);
     }
   }
+}
+
+#title-block-header {
+  text-align: center;
 }

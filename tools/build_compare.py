@@ -50,12 +50,12 @@ SETS = [
     ('s3', 'Set 3 / Cold metal', '#0E0F11 #ECEEF0 #89969B #625B9F #A564DF', {
         'light': ('#ECEEF0', '#ECEEF0', '#0E0F11', '#625B9F', '#89969B', '#A564DF'),
         'dark': ('#0E0F11', '#0E0F11', '#ECEEF0', '#A564DF', '#89969B', '#625B9F')}),
-    ('s4', 'Set 4 (light only; text colour borrowed from set 3)', '#DBDCF9 #FFFFFF #E7EAF9 #AEBCE7 #8E82DC', {
-        'light': ('#FFFFFF', '#E7EAF9', '#0E0F11', '#8E82DC', '#AEBCE7', '#8E82DC')}),
+    # Light half from set 4, dark half from the green-and-navy palette; light text uses that palette's navy.
+    ('s4', 'Set 4 (light) with Green and navy (dark)',
+     '#DBDCF9 #FFFFFF #E7EAF9 #AEBCE7 #8E82DC #5EC14E #091037 #E4F6E9 #5CC3E9 #91A4F6', {
+        'light': ('#FFFFFF', '#E7EAF9', '#091037', '#8E82DC', '#AEBCE7', '#8E82DC'),
+        'dark': auto('#5EC14E #091037 #E4F6E9 #5CC3E9 #91A4F6'.split(), 'dark')}),
     ('p1', 'Concrete wall', '#303337 #D9D8D3 #8E9090 #A9ADAB #9E9FAD', A),
-    ('p4', 'Misty morning', '#698DB7 #DADADA #121F58 #B7C4C6 #4C5D57', A),
-    ('p5', 'Blazing sunset', '#070506 #C84823 #602014 #D88942 #B96755', A),
-    ('p6', 'Green and navy (unnamed in the screenshot)', '#5EC14E #091037 #E4F6E9 #5CC3E9 #91A4F6', A),
 ]
 
 

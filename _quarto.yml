@@ -22,7 +22,9 @@ bibliography: references.bib
 format:
   html:
     theme: [default, custom.scss, design-preview.scss]
-    include-in-header: _design-preview.html
+    include-in-header:
+      - _mode-toggle.html
+      - _design-preview.html
     page-layout: article
     grid:
       body-width: 700px

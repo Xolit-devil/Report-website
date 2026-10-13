@@ -1,0 +1,34 @@
+<script>
+  // Light/dark switch. Until the visitor clicks it, the site follows the system setting;
+  // after a click the choice is remembered in this browser.
+  (function () {
+    var root = document.documentElement;
+    var saved = null;
+    try { saved = localStorage.getItem("mode"); } catch (e) {}
+    if (saved === "light" || saved === "dark") root.setAttribute("data-mode", saved);
+
+    function current() {
+      return root.getAttribute("data-mode") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "mode-toggle";
+      function label() {
+        var next = current() === "dark" ? "Light" : "Dark";
+        b.textContent = next;
+        b.setAttribute("aria-label", "Switch to " + next.toLowerCase() + " mode");
+      }
+      b.addEventListener("click", function () {
+        var next = current() === "dark" ? "light" : "dark";
+        root.setAttribute("data-mode", next);
+        try { localStorage.setItem("mode", next); } catch (e) {}
+        label();
+      });
+      label();
+      document.body.appendChild(b);
+    });
+  })();
+</script>

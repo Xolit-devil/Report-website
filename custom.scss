@@ -22,16 +22,31 @@ $navbar-hl: $accent;
   --muted: color-mix(in srgb, var(--fg) 65%, var(--bg)); // secondary text
 }
 
-// Dark scheme: Green and navy. Used when the visitor's system is set to dark.
+// Dark scheme: Green and navy.
+@mixin dark-colours {
+  color-scheme: dark;
+  --bg: #091037;
+  --surface: #091037;
+  --fg: #E4F6E9;
+  --accent: #91A4F6;
+  --rule: #5EC14E;
+  --hl: #5CC3E9;
+}
+
+// Dark when the visitor's system is dark, unless they switched to light with the button...
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #091037;
-    --surface: #091037;
-    --fg: #E4F6E9;
-    --accent: #91A4F6;
-    --rule: #5EC14E;
-    --hl: #5CC3E9;
+  html:not([data-mode="light"]) {
+    @include dark-colours;
   }
+}
+
+// ...and dark whenever they switched to dark with the button.
+html[data-mode="dark"] {
+  @include dark-colours;
+}
+
+html[data-mode="light"] {
+  color-scheme: light;
 }
 
 body {
@@ -160,4 +175,23 @@ h2 {
   display: block;
   font-size: 0.9rem;
   color: var(--muted);
+}
+
+// Light/dark switch, top right. It scrolls away with the page.
+.mode-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  padding: 0.15rem 0.6rem;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--fg);
+  }
 }

@@ -1,0 +1,2 @@
+# Applies to every project page: a link that opens a GitHub issue titled after the page.
+include-after-body: ../_page-issue.html

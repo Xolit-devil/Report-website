@@ -8,12 +8,16 @@ project:
 
 website:
   title: "Research notes"
+  site-url: https://xolit-devil.github.io/Report-website/
+  repo-url: https://github.com/xolit-devil/Report-website
   navbar:
     left:
       - text: Research
         href: research/index.qmd
       - text: About
         href: about.qmd
+  page-footer:
+    center: "Criticism and advice are welcome: [open an issue on GitHub](https://github.com/xolit-devil/Report-website/issues/new)."
 
 bibliography: references.bib
 

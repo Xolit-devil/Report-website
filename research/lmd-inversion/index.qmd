@@ -7,6 +7,10 @@ nocite: |
   @mccue2018pattern
 ---
 
+::: {.hero}
+[]{.hero-pic style="-webkit-mask-image:url(banner.png);mask-image:url(banner.png)"}
+:::
+
 
 ## Background reading
 

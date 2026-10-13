@@ -8,6 +8,7 @@ project:
   resources:
     - design-compare.html
     - "research/*/thumb.png"
+    - "research/*/banner.png"
 
 website:
   title: "Reports"

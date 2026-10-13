@@ -195,3 +195,135 @@ h2 {
     color: var(--fg);
   }
 }
+
+// ---------------------------------------------------------------------------
+// Banner layout (test). Overview: one wide banner per project, picture filling
+// it, title and description at the bottom left. Project page: the same picture
+// across the top, fading into the page with no frame.
+$wide: min(100vw - 3rem, 1500px);
+
+@mixin break-out {
+  position: relative;
+  left: 50%;
+  width: $wide;
+  max-width: none;
+}
+
+.banner-list {
+  @include break-out;
+  transform: translateX(-50%);
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.banner {
+  position: relative;
+  display: block;
+  aspect-ratio: 21 / 9;
+  min-height: 260px;
+  overflow: hidden;
+  border-radius: 18px;
+  background-color: color-mix(in srgb, var(--accent) 10%, var(--bg));
+  text-decoration: none;
+}
+
+// The picture file only carries transparency; the colour comes from the theme.
+.banner-pic,
+.hero-pic {
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent);
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.banner-pic {
+  transition: transform 0.6s ease;
+}
+
+.banner:hover .banner-pic {
+  transform: scale(1.03);
+}
+
+// Keeps the text readable where it lies over the picture.
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top right, color-mix(in srgb, var(--accent) 10%, var(--bg)) 12%, transparent 60%);
+}
+
+.banner-text {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  max-width: 40rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.banner-title {
+  display: block;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--fg);
+}
+
+.banner-desc {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--muted);
+}
+
+// A project without a picture gets a low banner with just its text.
+.banner-plain {
+  aspect-ratio: auto;
+  min-height: 0;
+
+  &::after {
+    display: none;
+  }
+
+  .banner-text {
+    position: static;
+  }
+}
+
+// Project page with a picture: picture first, title block pulled up over its lower left.
+main.content:has(> .hero) {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+
+  > .hero {
+    @include break-out;
+    transform: translateX(-50%);
+    order: -1;
+    flex: none;
+    aspect-ratio: 21 / 9;
+    min-height: 260px;
+    max-height: 75vh;
+    // No frame: the picture dissolves into the page at the sides and the bottom.
+    -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent), linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(to bottom, #000 45%, transparent), linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+  }
+
+  > #title-block-header {
+    @include break-out;
+    transform: translate(-50%, -100%);
+    padding: 0 clamp(1.25rem, 3vw, 2.5rem);
+    margin-bottom: -3rem;
+
+    .title {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+    }
+  }
+}

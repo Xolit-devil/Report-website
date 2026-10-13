@@ -1,0 +1,24 @@
+```{=html}
+<div class="banner-list">
+<%
+  // Projects that have a picture come first; the rest keep their order.
+  const ordered = [...items].sort((a, b) => (b.image ? 1 : 0) - (a.image ? 1 : 0));
+%>
+<% for (const item of ordered) { %>
+<%
+  // Quarto rewrites href attributes for the published address but not URLs inside style,
+  // so the picture path is made relative to this page here.
+  const banner = item.image ? item.image.replace(/^\/research\//, '').replace('thumb.png', 'banner.png') : null;
+%>
+  <a class="banner<%= banner ? '' : ' banner-plain' %>" href="<%- item.path %>">
+    <% if (banner) { %>
+    <span class="banner-pic" role="img" aria-label="<%= item['image-alt'] || '' %>" style="-webkit-mask-image:url('<%- banner %>');mask-image:url('<%- banner %>')"></span>
+    <% } %>
+    <span class="banner-text">
+      <span class="banner-title"><%= item.title %></span>
+      <span class="banner-desc"><%= item.description %></span>
+    </span>
+  </a>
+<% } %>
+</div>
+```

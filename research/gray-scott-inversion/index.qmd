@@ -7,6 +7,10 @@ nocite: |
   @huang2024diffusionpde
 ---
 
+::: {.hero}
+[]{.hero-pic style="-webkit-mask-image:url(banner.png);mask-image:url(banner.png)"}
+:::
+
 The goal of the project is to find initial conditions for a given stable or
 final(force-stoped after time t) states. Or for other models to find the
 parameter fields such that a given initial state turns into a given final

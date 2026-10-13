@@ -1,9 +1,9 @@
 ---
-title: "Hello World"
+title: "S. Khomych Page"
 ---
 
 
 
-- [Research](research/index.qmd)
-- [About](about.qmd)
-- [Blog](blog.qmd)
+[What is he doing?](research/index.qmd)
+[Who is it?](about.qmd)
+[What is he yapping?](blog.qmd)

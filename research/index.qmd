@@ -1,8 +1,8 @@
 ---
-title: "Reports"
+title: "Current Failures"
 listing:
   contents: "*/index.qmd"
-  template: _list.ejs
+  template: _banners.ejs
   sort: "title"
   fields: [title, description]
 ---

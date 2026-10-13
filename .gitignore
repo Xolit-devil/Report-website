@@ -1,3 +1,8 @@
 /.quarto/
 /_site/
 **/*.quarto_ipynb
+
+# Working notes, not part of the site
+/Projects/
+/about.md
+/style.md

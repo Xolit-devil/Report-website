@@ -79,7 +79,14 @@ h2 {
 
 .navbar {
   background-color: var(--surface) !important;
-  border-bottom: 1px solid var(--rule);
+  // Bar height: this padding plus the padding of the links below. Raise both for a taller bar.
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .nav-link {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
 
   .navbar-brand,
   .nav-link,
@@ -91,6 +98,7 @@ h2 {
   .nav-link.active {
     color: var(--accent) !important;
   }
+
 }
 
 .nav-footer {

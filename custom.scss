@@ -1,23 +1,37 @@
 /*-- scss:defaults --*/
-$accent: #0b5fa5;
+$accent: #8E82DC;
 
 $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$body-color: #222;
+$body-color: #091037;
 $link-color: $accent;
 $navbar-bg: #fff;
-$navbar-fg: #222;
+$navbar-fg: $body-color;
 $navbar-hl: $accent;
 
 /*-- scss:rules --*/
 // Every colour on the site comes from these roles.
+// Light scheme: set 4 (white and lavender), with navy text.
 :root {
-  --bg: #fff;               // page background
-  --surface: #fff;          // top bar and footer background
-  --fg: #{$body-color};     // main text
-  --accent: #{$accent};     // links
-  --rule: #eee;             // divider lines
-  --hl: #{$accent};         // highlighted text (.hl)
+  color-scheme: light dark;
+  --bg: #FFFFFF;        // page background
+  --surface: #E7EAF9;   // top bar and footer background
+  --fg: #091037;        // main text
+  --accent: #8E82DC;    // links, list pictures
+  --rule: #AEBCE7;      // divider lines
+  --hl: #8E82DC;        // highlighted text (.hl)
   --muted: color-mix(in srgb, var(--fg) 65%, var(--bg)); // secondary text
+}
+
+// Dark scheme: Green and navy. Used when the visitor's system is set to dark.
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #091037;
+    --surface: #091037;
+    --fg: #E4F6E9;
+    --accent: #91A4F6;
+    --rule: #5EC14E;
+    --hl: #5CC3E9;
+  }
 }
 
 body {

@@ -1,0 +1,17 @@
+<script>
+  // TEMPORARY, for design-compare.html: ?theme=<name> selects a candidate colour theme
+  // and is carried along when following links inside the site.
+  (function () {
+    var t = new URLSearchParams(location.search).get("theme");
+    if (!t) return;
+    document.documentElement.setAttribute("data-theme", t);
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("a[href]").forEach(function (a) {
+        if (a.host !== location.host || a.getAttribute("href").charAt(0) === "#") return;
+        var u = new URL(a.href);
+        u.searchParams.set("theme", t);
+        a.href = u.toString();
+      });
+    });
+  })();
+</script>

@@ -5,25 +5,23 @@ project:
   render:
     - "*.qmd"
     - "research/**/*.qmd"
+  resources:
+    - design-compare.html
 
 website:
-  title: "Research notes"
+  title: "Reports"
   site-url: https://xolit-devil.github.io/Report-website/
   repo-url: https://github.com/xolit-devil/Report-website
-  navbar:
-    left:
-      - text: Research
-        href: research/index.qmd
-      - text: About
-        href: about.qmd
   page-footer:
-    center: "Criticism and advice are welcome: [open an issue on GitHub](https://github.com/xolit-devil/Report-website/issues/new)."
+    center: "Criticism and advice is what this website was built for: [open an issue on GitHub](https://github.com/xolit-devil/Report-website/issues/new)."
+
 
 bibliography: references.bib
 
 format:
   html:
-    theme: [default, custom.scss]
+    theme: [default, custom.scss, design-preview.scss]
+    include-in-header: _design-preview.html
     page-layout: article
     grid:
       body-width: 700px

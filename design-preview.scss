@@ -1,0 +1,59 @@
+/*-- scss:rules --*/
+// TEMPORARY: candidate colour themes for design-compare.html.
+// Selected per page with ?theme=<name>; remove once one set is chosen.
+html[data-theme="s1-light"] {
+  --bg: #DDC5B1;
+  --surface: #C7B5A7;
+  --fg: #605550;
+  --accent: #605550;
+  --rule: #95867B;
+  --hl: #95867B;
+}
+html[data-theme="s1-dark"] {
+  --bg: #605550;
+  --surface: #605550;
+  --fg: #DDC5B1;
+  --accent: #CABEA9;
+  --rule: #95867B;
+  --hl: #C7B5A7;
+}
+html[data-theme="s2-light"] {
+  --bg: #EAF281;
+  --surface: #EAF281;
+  --fg: #0A0E08;
+  --accent: #4F5B9A;
+  --rule: #6FA459;
+  --hl: #D6362B;
+}
+html[data-theme="s2-dark"] {
+  --bg: #0A0E08;
+  --surface: #0A0E08;
+  --fg: #EAF281;
+  --accent: #6FA459;
+  --rule: #4F5B9A;
+  --hl: #D6362B;
+}
+html[data-theme="s3-light"] {
+  --bg: #ECEEF0;
+  --surface: #ECEEF0;
+  --fg: #0E0F11;
+  --accent: #625B9F;
+  --rule: #89969B;
+  --hl: #A564DF;
+}
+html[data-theme="s3-dark"] {
+  --bg: #0E0F11;
+  --surface: #0E0F11;
+  --fg: #ECEEF0;
+  --accent: #A564DF;
+  --rule: #89969B;
+  --hl: #625B9F;
+}
+html[data-theme="s4-light"] {
+  --bg: #FFFFFF;
+  --surface: #E7EAF9;
+  --fg: #0E0F11;
+  --accent: #8E82DC;
+  --rule: #AEBCE7;
+  --hl: #8E82DC;
+}

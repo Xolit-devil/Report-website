@@ -1,0 +1,50 @@
+/*-- scss:defaults --*/
+$accent: #0b5fa5;
+
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$body-color: #2454C5;
+$body-bg:#090F1B;
+
+$link-color: $accent;
+$navbar-bg: #fff;
+$navbar-fg: #222;
+$navbar-hl: $accent;
+
+/*-- scss:rules --*/
+main.content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+}
+
+body {
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+h2 {
+  margin-top: 3rem;
+  border-bottom: none;
+}
+
+.navbar {
+  border-bottom: 1px solid #eee;
+}
+
+.quarto-listing-default .listing-title {
+  font-weight: 600;
+}
+
+.stub {
+  color: #777;
+}
+
+.page-issue {
+  max-width: 700px;
+  margin: 3rem auto 0;
+  font-size: 0.9rem;
+}

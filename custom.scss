@@ -9,6 +9,28 @@ $navbar-fg: #222;
 $navbar-hl: $accent;
 
 /*-- scss:rules --*/
+// Every colour on the site comes from these roles.
+:root {
+  --bg: #fff;               // page background
+  --surface: #fff;          // top bar and footer background
+  --fg: #{$body-color};     // main text
+  --accent: #{$accent};     // links
+  --rule: #eee;             // divider lines
+  --hl: #{$accent};         // highlighted text (.hl)
+  --muted: color-mix(in srgb, var(--fg) 65%, var(--bg)); // secondary text
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  line-height: 1.65;
+}
+
+a,
+a:hover {
+  color: var(--accent);
+}
+
 main.content {
   max-width: 700px;
   margin: 0 auto;
@@ -16,12 +38,9 @@ main.content {
   padding-bottom: 6rem;
 }
 
-body {
-  line-height: 1.65;
-}
-
 h1, h2, h3 {
   font-weight: 600;
+  color: var(--fg);
 }
 
 h2 {
@@ -30,15 +49,52 @@ h2 {
 }
 
 .navbar {
-  border-bottom: 1px solid #eee;
+  background-color: var(--surface) !important;
+  border-bottom: 1px solid var(--rule);
+
+  .navbar-brand,
+  .nav-link,
+  .aa-DetachedSearchButtonIcon,
+  .navbar-toggler {
+    color: var(--fg) !important;
+  }
+
+  .nav-link.active {
+    color: var(--accent) !important;
+  }
 }
 
-.quarto-listing-default .listing-title {
-  font-weight: 600;
+.nav-footer {
+  background-color: var(--surface);
+  color: var(--muted);
+  border-top: none;
+
+  a {
+    color: var(--muted);
+  }
+}
+
+.quarto-listing-default {
+  .quarto-post {
+    border-bottom-color: var(--rule);
+  }
+
+  .listing-title {
+    font-weight: 600;
+  }
+
+  .listing-description,
+  .listing-description a {
+    color: var(--muted);
+  }
 }
 
 .stub {
-  color: #777;
+  color: var(--muted);
+}
+
+.hl {
+  color: var(--hl);
 }
 
 .page-issue {

@@ -1,5 +1,5 @@
 ---
-title: "Research"
+title: "Reports"
 listing:
   contents: "*/index.qmd"
   type: default

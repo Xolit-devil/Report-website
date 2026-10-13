@@ -2,7 +2,7 @@
 title: "Reports"
 listing:
   contents: "*/index.qmd"
-  type: default
+  template: _list.ejs
   sort: "title"
   fields: [title, description]
 ---

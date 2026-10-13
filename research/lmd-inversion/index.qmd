@@ -1,6 +1,8 @@
 ---
 title: "LMD inversion"
 description: "Description not written yet."
+image: thumb.png
+image-alt: "Tantalum fraction in a simulated dealloying run"
 nocite: |
   @mccue2018pattern
 ---

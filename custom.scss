@@ -102,3 +102,48 @@ h2 {
   margin: 3rem auto 0;
   font-size: 0.9rem;
 }
+
+// Research list: one row per project, picture on the left.
+.project-list {
+  display: grid;
+  gap: 1.75rem;
+  margin-top: 2rem;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  text-decoration: none;
+}
+
+// The picture file only carries transparency; the colour comes from the theme.
+.project-thumb {
+  width: 96px;
+  height: 96px;
+  background-color: var(--accent);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.project-thumb-empty {
+  background: none;
+  border: 1px solid var(--rule);
+}
+
+.project-title {
+  display: block;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.project:hover .project-title {
+  color: var(--accent);
+}
+
+.project-desc {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--muted);
+}

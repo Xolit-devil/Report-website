@@ -1,0 +1,22 @@
+```{=html}
+<div class="project-list">
+<% for (const item of items) { %>
+<%
+  // Quarto rewrites href attributes for the published address but not URLs inside style,
+  // so the picture path is made relative to this page here.
+  const thumb = item.image ? item.image.replace(/^\/research\//, '') : null;
+%>
+  <a class="project" href="<%- item.path %>">
+    <% if (thumb) { %>
+    <span class="project-thumb" role="img" aria-label="<%= item['image-alt'] || '' %>" style="-webkit-mask-image:url('<%- thumb %>');mask-image:url('<%- thumb %>')"></span>
+    <% } else { %>
+    <span class="project-thumb project-thumb-empty"></span>
+    <% } %>
+    <span class="project-text">
+      <span class="project-title"><%= item.title %></span>
+      <span class="project-desc"><%= item.description %></span>
+    </span>
+  </a>
+<% } %>
+</div>
+```

@@ -194,6 +194,13 @@ h2 {
   &:hover {
     color: var(--fg);
   }
+
+  // Inside the top bar it sits at the right end and moves with the bar.
+  &.in-bar {
+    position: static;
+    margin-left: auto;
+    flex: none;
+  }
 }
 
 // ---------------------------------------------------------------------------

@@ -15,6 +15,18 @@ website:
   title: "Reports"
   site-url: https://xolit-devil.github.io/Report-website/
   repo-url: https://github.com/xolit-devil/Report-website
+  search: false
+  # Top bar. It slides away when scrolling down and returns when scrolling up.
+  navbar:
+    title: false
+    pinned: false
+    left:
+      - text: Reports
+        href: research/index.qmd
+      - text: Me
+        href: about.qmd
+      - text: Blogs
+        href: blog.qmd
   page-footer:
     center: "Criticism and advice is what this website was built for: [open an issue on GitHub](https://github.com/xolit-devil/Report-website/issues/new)."
 

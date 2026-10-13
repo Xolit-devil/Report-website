@@ -28,7 +28,10 @@
         label();
       });
       label();
-      document.body.appendChild(b);
+      // In the top bar when there is one, otherwise at the top right of the page.
+      var bar = document.querySelector("#quarto-header .navbar-container");
+      if (bar) b.classList.add("in-bar");
+      (bar || document.body).appendChild(b);
     });
   })();
 </script>

@@ -1,9 +1,15 @@
 ---
 title: "FNO"
 description: "Description not written yet."
+image: thumb.png
+image-alt: "Final fields of a dealloying surrogate model, used to train a neural operator"
 nocite: |
   @kovachki2024neural
 ---
+
+::: {.hero}
+[]{.hero-pic style="-webkit-mask-image:url(banner.png);mask-image:url(banner.png)"}
+:::
 
 
 ## Background reading

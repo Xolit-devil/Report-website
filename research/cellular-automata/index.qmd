@@ -1,0 +1,12 @@
+---
+title: "Cellular Automata"
+description: "Description not written yet."
+nocite: |
+  @chan2019lenia, @miotti2025differentiable
+---
+
+
+## Background reading
+
+::: {#refs}
+:::

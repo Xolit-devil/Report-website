@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: _site
+  # Only .qmd files are pages. CLAUDE.md, about.md, style.md and Projects/ are working notes.
+  render:
+    - "*.qmd"
+    - "research/**/*.qmd"
+
+website:
+  title: "Research notes"
+  navbar:
+    left:
+      - text: Research
+        href: research/index.qmd
+      - text: About
+        href: about.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: [default, custom.scss]
+    page-layout: article
+    grid:
+      body-width: 700px
+      sidebar-width: 0px
+      margin-width: 0px
+    toc: false
+    link-external-newwindow: true

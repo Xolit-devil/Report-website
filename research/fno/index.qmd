@@ -1,0 +1,12 @@
+---
+title: "FNO"
+description: "Description not written yet."
+nocite: |
+  @kovachki2024neural
+---
+
+
+## Background reading
+
+::: {#refs}
+:::

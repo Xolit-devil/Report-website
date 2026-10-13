@@ -1,0 +1,12 @@
+---
+title: "LMD inversion"
+description: "Description not written yet."
+nocite: |
+  @mccue2018pattern
+---
+
+
+## Background reading
+
+::: {#refs}
+:::

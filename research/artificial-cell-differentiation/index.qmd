@@ -1,0 +1,12 @@
+---
+title: "Artificial Cell differentiation"
+description: "Description not written yet."
+nocite: |
+  @ke2025inverse, @lachance2022learning
+---
+
+
+## Background reading
+
+::: {#refs}
+:::

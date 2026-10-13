@@ -1,0 +1,9 @@
+---
+title: "Research notes"
+---
+
+Notes on inverting PDE systems, cellular automata and artificial life.
+Criticism and advice are welcome.
+
+- [Research](research/index.qmd)
+- [About](about.qmd)

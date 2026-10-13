@@ -1,0 +1,22 @@
+---
+title: "Gray-Scott Inversion"
+description: "Finding initial conditions or parameter fields that lead to a given final state."
+nocite: |
+  @huang2024diffusionpde
+---
+
+The goal of the project is to find initial conditions for a given stable or
+final(force-stoped after time t) states. Or for other models to find the
+parameter fields such that a given initial state turns into a given final
+state. The goal is to simplify the initial condtions and the parameter fields
+with a TV metric or by geometric means like restricting them to lines, blobs
+and to simultaneously minimize the resimulation error.
+
+::: {.stub}
+Results and figures not added yet.
+:::
+
+## Background reading
+
+::: {#refs}
+:::

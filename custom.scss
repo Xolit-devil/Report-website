@@ -109,6 +109,17 @@ h2 {
   a {
     color: var(--muted);
   }
+
+  // The footer text gets the whole width, so it stays on one line unless the window is narrow.
+  .nav-footer-left,
+  .nav-footer-right {
+    display: none;
+  }
+
+  .nav-footer-center {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 
 .quarto-listing-default {

@@ -6,6 +6,7 @@
   (function () {
     var h = document.querySelector("h1.title");
     var a = document.getElementById("page-issue-link");
-    if (h && a) a.href += "?title=" + encodeURIComponent("[" + h.textContent.trim() + "] ");
+    var name = h ? h.textContent.trim() : document.title;
+    if (a && name) a.href += "?title=" + encodeURIComponent("[" + name + "] ");
   })();
 </script>

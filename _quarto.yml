@@ -1,7 +1,6 @@
 project:
   type: website
   output-dir: _site
-  # Only .qmd files are pages. CLAUDE.md, about.md, style.md and Projects/ are working notes.
   render:
     - "*.qmd"
     - "research/**/*.qmd"
@@ -20,15 +19,19 @@ website:
   navbar:
     title: false
     pinned: false
+    collapse: false
     left:
-      - text: Reports
-        href: research/index.qmd
       - text: Me
         href: about.qmd
+      - text: Reports
+        href: research/index.qmd
+      - text: Page
+        href:  index.qmd
       - text: Blogs
         href: blog.qmd
   page-footer:
     center: "Criticism and advice is what this website was built for: [open an issue on GitHub](https://github.com/xolit-devil/Report-website/issues/new)."
+
 
 
 bibliography: references.bib
@@ -39,6 +42,8 @@ format:
     include-in-header:
       - _mode-toggle.html
       - _design-preview.html
+    # "Comment on this page" link at the foot of every page.
+    include-after-body: _page-issue.html
     page-layout: article
     grid:
       body-width: 700px

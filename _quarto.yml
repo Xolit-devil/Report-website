@@ -9,6 +9,7 @@ project:
     - design-compare.html
     - "research/*/thumb.png"
     - "research/*/banner.png"
+    - "research/*/banner-over.png"
 
 website:
   title: "Reports"

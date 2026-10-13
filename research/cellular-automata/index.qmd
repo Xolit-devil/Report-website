@@ -2,6 +2,7 @@
 title: "Cellular Automata"
 description: "Description not written yet."
 image: thumb.png
+order: 1
 image-alt: "A wall assembled by a learned cellular automaton rule"
 nocite: |
   @chan2019lenia, @miotti2025differentiable

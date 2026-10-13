@@ -1,8 +1,9 @@
 ```{=html}
 <div class="banner-list">
 <%
-  // Projects that have a picture come first; the rest keep their order.
-  const ordered = [...items].sort((a, b) => (b.image ? 1 : 0) - (a.image ? 1 : 0));
+  // Position comes from each project's `order`; `half: true` makes a half-width banner,
+  // so two neighbouring halves share a row.
+  const ordered = [...items].sort((a, b) => (Number(a.order) || 99) - (Number(b.order) || 99));
 %>
 <% for (const item of ordered) { %>
 <%
@@ -10,9 +11,12 @@
   // so the picture path is made relative to this page here.
   const banner = item.image ? item.image.replace(/^\/research\//, '').replace('thumb.png', 'banner.png') : null;
 %>
-  <a class="banner<%= banner ? '' : ' banner-plain' %>" href="<%- item.path %>">
+  <a class="banner<%= banner ? '' : ' banner-plain' %><%= item.half ? ' banner-half' : '' %>" href="<%- item.path %>">
     <% if (banner) { %>
     <span class="banner-pic" role="img" aria-label="<%= item['image-alt'] || '' %>" style="-webkit-mask-image:url('<%- banner %>');mask-image:url('<%- banner %>')"></span>
+    <% } %>
+    <% if (banner && item.overlay) { %>
+    <span class="banner-pic banner-over" style="-webkit-mask-image:url('<%- banner.replace('banner.png', 'banner-over.png') %>');mask-image:url('<%- banner.replace('banner.png', 'banner-over.png') %>')"></span>
     <% } %>
     <span class="banner-text">
       <span class="banner-title"><%= item.title %></span>

@@ -1,7 +1,14 @@
 ---
 title: "Artificial Cell and Continuous fields"
 description: "Description not written yet."
-
+image: thumb.png
+order: 3
+half: true
+image-alt: "A field predicted by a network, with the cell imagery it was predicted from laid over it"
+overlay: true
 ---
 
-
+::: {.hero}
+[]{.hero-pic style="-webkit-mask-image:url(banner.png);mask-image:url(banner.png)"}
+[]{.hero-pic .hero-over style="-webkit-mask-image:url(banner-over.png);mask-image:url(banner-over.png)"}
+:::

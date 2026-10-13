@@ -4,5 +4,5 @@ listing:
   contents: "*/index.qmd"
   template: _banners.ejs
   sort: "title"
-  fields: [title, description]
+  fields: [title, description, image, overlay, order, half]
 ---

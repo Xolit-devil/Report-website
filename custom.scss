@@ -214,11 +214,13 @@ $wide: calc(100vw - 2.5rem);
   @include break-out;
   transform: translateX(-50%);
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
   margin-top: 2rem;
 }
 
 .banner {
+  grid-column: span 2;
   position: relative;
   display: block;
   height: calc(100vh - 3rem);
@@ -241,6 +243,13 @@ $wide: calc(100vw - 2.5rem);
   mask-position: center;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+}
+
+// A second picture layer, painted in the text colour over the first.
+.banner-over,
+.hero-over {
+  background-color: var(--fg);
+  opacity: 0.8;
 }
 
 .banner-pic {
@@ -280,6 +289,23 @@ $wide: calc(100vw - 2.5rem);
   display: block;
   margin-top: 0.4rem;
   color: var(--muted);
+}
+
+// Half-width banner: two of them in a row, with the gap between.
+.banner-half {
+  grid-column: span 1;
+  height: 62vh;
+
+  .banner-title {
+    font-size: clamp(1.25rem, 2.2vw, 1.9rem);
+  }
+}
+
+// On a narrow screen every banner takes the full row.
+@media (max-width: 800px) {
+  .banner-half {
+    grid-column: span 2;
+  }
 }
 
 // A project without a picture gets a low banner with just its text.

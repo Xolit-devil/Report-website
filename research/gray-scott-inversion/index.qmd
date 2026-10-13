@@ -2,6 +2,8 @@
 title: "Gray-Scott Inversion"
 description: "Finding initial conditions or parameter fields that lead to a given final state."
 image: thumb.png
+order: 6
+half: true
 image-alt: "A Gray-Scott pattern on a 64 by 64 grid"
 nocite: |
   @huang2024diffusionpde

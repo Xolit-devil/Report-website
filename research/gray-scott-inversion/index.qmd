@@ -35,9 +35,7 @@ The three approaches used are physics search [@kingma2015adam; @ledimet1986varia
 
 ### Physics Search
 
-::: {.stub}
-Introduction to be written.
-:::
+The goal is to find a simpler starting state than the true one that still grows into the observed final pattern, so the initial condition is found and simplified at the same time. This method searches directly through the Gray-Scott solver, so it needs no training.
 
 ::: {.pf-row}
 
@@ -73,9 +71,7 @@ Introduction to be written.
 
 :::
 
-::: {.stub}
-Description to be written.
-:::
+The true starting state (step 50) is a noisy random field. The solver turns it into the true final pattern at step 300 in 250 steps, and only 50 pixels of that final pattern are observed.
 
 ::: {.pf-row}
 
@@ -111,15 +107,11 @@ Description to be written.
 
 :::
 
-::: {.stub}
-Description to be written.
-:::
+The search found a single blob, described by just 4 numbers (position, width, strength). Its growth over the same 250 steps reproduces the final pattern with a relative error of 0.049 (16x16 grid).
 
 ### Blob growth
 
-::: {.stub}
-Introduction to be written.
-:::
+Here the start is always the same fixed blob, and the goal is to find the parameter maps (d = diffusivity, a = feed, b = kill) that make it grow into a given final state. A diffusion model (DiffusionPDE-style prior) does this, and it is the most robust of the three approaches: one trained network handles every scene.
 
 ::: {.pf-row}
 
@@ -189,9 +181,7 @@ Introduction to be written.
 
 :::
 
-::: {.stub}
-Description to be written.
-:::
+The hidden true parameter maps (shown below as deviation from nominal) grow the blob into the true final pattern over 400 steps (32x32 grid).
 
 ::: {.pf-row}
 
@@ -261,9 +251,7 @@ Description to be written.
 
 :::
 
-::: {.stub}
-Description to be written.
-:::
+The maps found by the diffusion model grow the same blob into a re-generated final pattern with a relative error of 0.25. The found maps differ from the true ones, because many different parameter fields give the same pattern.
 
 ::: {.pf-row}
 
@@ -401,15 +389,11 @@ Description to be written.
 
 :::
 
-::: {.stub}
-Description to be written.
-:::
+The same kind of diffusion model is asked to grow a drawn letter from the blob over 100 steps (16x16). The letters come out recognisable but not exact: drawing a letter is harder than recreating a natural pattern.
 
 ### FNO
 
-::: {.stub}
-Introduction to be written.
-:::
+A Fourier neural operator (FNO) learns the inverse map and answers in a single forward pass. It is the fastest approach: seconds for a whole set of scenes, with no search per scene.
 
 ::: {.pf-row}
 
@@ -445,9 +429,7 @@ Introduction to be written.
 
 :::
 
-::: {.stub}
-Description to be written.
-:::
+The true starting state grows into the true final pattern; this is the pattern the operator has to explain.
 
 ::: {.pf-row}
 
@@ -483,9 +465,7 @@ Description to be written.
 
 :::
 
-::: {.stub}
-Description to be written.
-:::
+From the observed final state the operator returns a starting state at step 50 whose growth over 250 steps matches the final with a relative error of 0.0015. It also checks 8 rotated and mirrored views of the input and polishes the answer briefly through the solver.
 
 ::: {.pf-row}
 

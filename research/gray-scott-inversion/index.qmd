@@ -1,9 +1,8 @@
 ---
-title: "Gray-Scott Inversion"
-description: "Finding initial conditions or parameter fields that lead to a given final state."
+title: "Pattern Forcing"
+description: "How to draw on fish skin"
 image: thumb.png
-order: 6
-half: true
+order: 1
 image-alt: "A Gray-Scott pattern on a 64 by 64 grid"
 nocite: |
   @huang2024diffusionpde
@@ -13,12 +12,10 @@ nocite: |
 []{.hero-pic style="-webkit-mask-image:url(banner.png);mask-image:url(banner.png)"}
 :::
 
-The goal of the project is to find initial conditions for a given stable or
-final(force-stoped after time t) states. Or for other models to find the
-parameter fields such that a given initial state turns into a given final
-state. The goal is to simplify the initial condtions and the parameter fields
-with a TV metric or by geometric means like restricting them to lines, blobs
-and to simultaneously minimize the resimulation error.
+Usual methods of additive manufacturing focus on pointwise or static layer by  layer control, examples being 3D printers and photolithography.
+These methods have shows their effectivness and are outmost reliable, however lack the scaling and flexibility of self-generating biological and chemical systems.
+The following experiments show how both straightforward and learnt approaches are able to control the dynamics of a chemical model.
+The algortihms used are physics search [@kingma2015adam; @ledimet1986variational; @mallat1993matching; @denoyelle2020sliding], Diffusion model [@huang2024diffusionpde; @karras2022elucidating] and Fourier Neural Operators [@li2021fourier; @kovachki2024neural].
 
 ::: {.stub}
 Results and figures not added yet.

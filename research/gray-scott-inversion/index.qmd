@@ -556,7 +556,7 @@ From the observed final state the operator returns a starting state at step 50 w
 
 :::
 
-The target is a drawn cross ("plus") on the 32x32 grid, and the start is the usual blob in the middle. This example is not from a Fourier operator: it comes from the novelty search, which finds the four parameter maps (d, a, b and the diffusion scale D) by gradient search through the solver. The re-generated final after 300 steps matches the cross with a score (MCC) of 0.96.
+The target is a drawn cross ("plus") on the 32x32 grid, and the start is the usual blob in the middle. This example is not from a Fourier operator: it comes from the novelty search, which finds the four parameter maps (d, a, b and the diffusion scale D) by gradient search through the solver. The re-generated final after 300 steps matches the cross with a score (MCC) of 0.84. It is the "nsdp" arm of the novelty search, chosen as the successful example whose kill map b copies the target least (correlation r = -0.08).
 
 :::
 

@@ -471,39 +471,91 @@ From the observed final state the operator returns a starting state at step 50 w
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![target letter](figures/fno_letter_target_light.png)
+![cross: plus target](figures/fno_plus_target_light.png)
 :::
 
 ::: {.pf-dark}
-![target letter](figures/fno_letter_target_dark.png)
+![cross: plus target](figures/fno_plus_target_dark.png)
 :::
 :::
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![progression](figures/fno_letter_growth_light.gif)
+![growth from the blob under the answer](figures/fno_plus_growth_light.gif)
 :::
 
 ::: {.pf-dark}
-![progression](figures/fno_letter_growth_dark.gif)
+![growth from the blob under the answer](figures/fno_plus_growth_dark.gif)
 :::
 :::
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![re-generated Final](figures/fno_letter_final_light.png)
+![re-generated Final](figures/fno_plus_final_light.png)
 :::
 
 ::: {.pf-dark}
-![re-generated Final](figures/fno_letter_final_dark.png)
+![re-generated Final](figures/fno_plus_final_dark.png)
 :::
 :::
 
 :::
 
-::: {.stub}
-Description to be written.
+::: {.pf-row}
+
+::: {.pf-cell}
+::: {.pf-light}
+![d](figures/fno_plus_d_light.png)
 :::
+
+::: {.pf-dark}
+![d](figures/fno_plus_d_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![a](figures/fno_plus_a_light.png)
+:::
+
+::: {.pf-dark}
+![a](figures/fno_plus_a_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![a](figures/fno_plus_a_light.png)
+:::
+
+::: {.pf-dark}
+![a](figures/fno_plus_a_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![b](figures/fno_plus_b_light.png)
+:::
+
+::: {.pf-dark}
+![b](figures/fno_plus_b_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![D](figures/fno_plus_D_light.png)
+:::
+
+::: {.pf-dark}
+![D](figures/fno_plus_D_dark.png)
+:::
+:::
+
+:::
+
+The target is a drawn cross ("plus") on the 32x32 grid, and the start is the usual blob in the middle. This example is not from a Fourier operator: it comes from the novelty search, which finds the four parameter maps (d, a, b and the diffusion scale D) by gradient search through the solver. The re-generated final after 300 steps matches the cross with a score (MCC) of 0.96.
 
 :::
 

@@ -4,6 +4,7 @@ description: "How to draw on fish skin"
 image: thumb.png
 order: 1
 css: results.css
+anchor-sections: false
 image-alt: "A Gray-Scott pattern on a 64 by 64 grid"
 nocite: |
   @huang2024diffusionpde

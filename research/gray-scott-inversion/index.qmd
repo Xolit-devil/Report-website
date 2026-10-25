@@ -12,16 +12,160 @@ nocite: |
 []{.hero-pic style="-webkit-mask-image:url(banner.png);mask-image:url(banner.png)"}
 :::
 
+:::: {.split}
+
+::: {.split-left}
+
 Usual methods of additive manufacturing focus on pointwise or static layer by  layer control, examples being 3D printers and photolithography.
 These methods have shows their effectivness and are outmost reliable, however lack the scaling and flexibility of self-generating biological and chemical systems [@miotti2025differentiable].
 The following experiments show how both straightforward and learnt approaches are able to control the dynamics of a chemical model.
-The algortihms used are physics search [@kingma2015adam; @ledimet1986variational; @mallat1993matching; @denoyelle2020sliding], Diffusion model [@huang2024diffusionpde; @karras2022elucidating] and Fourier Neural Operators [@li2021fourier; @kovachki2024neural].
-
-::: {.stub}
-Results and figures not added yet.
-:::
+The three approaches used are physics search [@kingma2015adam; @ledimet1986variational; @mallat1993matching; @denoyelle2020sliding], Diffusion models [@huang2024diffusionpde; @karras2022elucidating] and Fourier Neural Operators [@li2021fourier; @kovachki2024neural].
 
 ## Background reading
 
 ::: {#refs}
 :::
+
+:::
+
+::: {.split-right}
+
+## Results
+
+### Physics Search
+
+::: {.stub}
+Introduction to be written.
+:::
+
+::: {layout-ncol=3}
+![noisy initials](figures/ps_noisy_initial.png)
+
+![progression](figures/ps_true_growth.gif)
+
+![True Final](figures/ps_true_final.png)
+:::
+
+::: {.stub}
+Description to be written.
+:::
+
+::: {layout-ncol=3}
+![simple initials](figures/ps_found_initial.png)
+
+![progression](figures/ps_found_growth.gif)
+
+![re-generated Final](figures/ps_found_final.png)
+:::
+
+::: {.stub}
+Description to be written.
+:::
+
+### Blob growth
+
+::: {.stub}
+Introduction to be written.
+:::
+
+::: {layout-ncol=3}
+![blob](figures/bn_blob_a.png)
+
+![growth under the true maps](figures/bn_true_growth.gif)
+
+![True Final](figures/bn_true_final.png)
+:::
+
+::: {layout-ncol=3}
+![true d](figures/bn_true_d.png)
+
+![true a](figures/bn_true_a.png)
+
+![true b](figures/bn_true_b.png)
+:::
+
+::: {.stub}
+Description to be written.
+:::
+
+::: {layout-ncol=3}
+![blob](figures/bn_blob_b.png)
+
+![growth under the found maps](figures/bn_found_growth.gif)
+
+![re-generated Final](figures/bn_found_final.png)
+:::
+
+::: {layout-ncol=3}
+![found d](figures/bn_found_d.png)
+
+![found a](figures/bn_found_a.png)
+
+![found b](figures/bn_found_b.png)
+:::
+
+::: {.stub}
+Description to be written.
+:::
+
+::: {layout-ncol=3}
+![target letter](figures/lt_target.png)
+
+![growth under the found maps](figures/lt_found_growth.gif)
+
+![re-generated Final](figures/lt_found_final.png)
+:::
+
+::: {layout-ncol=3}
+![found d](figures/lt_found_d.png)
+
+![found a](figures/lt_found_a.png)
+
+![found b](figures/lt_found_b.png)
+:::
+
+::: {.stub}
+Description to be written.
+:::
+
+### FNO
+
+::: {.stub}
+Introduction to be written.
+:::
+
+::: {layout-ncol=3}
+![true initials](figures/fno_noisy_initial.png)
+
+![progression](figures/fno_true_growth.gif)
+
+![True Final](figures/fno_true_final.png)
+:::
+
+::: {.stub}
+Description to be written.
+:::
+
+::: {layout-ncol=3}
+![FNO answer](figures/fno_found_initial.png)
+
+![progression](figures/fno_found_growth.gif)
+
+![re-generated Final](figures/fno_found_final.png)
+:::
+
+::: {.stub}
+Description to be written.
+:::
+
+::: {.stub}
+No Fourier-operator letter reconstruction exists yet.
+:::
+
+::: {.stub}
+Description to be written.
+:::
+
+:::
+
+::::

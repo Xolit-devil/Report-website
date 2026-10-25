@@ -269,31 +269,31 @@ Description to be written.
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![target letter](figures/lt_target_light.png)
+![target letter X](figures/lt_X_target_light.png)
 :::
 
 ::: {.pf-dark}
-![target letter](figures/lt_target_dark.png)
+![target letter X](figures/lt_X_target_dark.png)
 :::
 :::
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![growth under the found maps](figures/lt_found_growth_light.gif)
+![growth under the found maps](figures/lt_X_found_growth_light.gif)
 :::
 
 ::: {.pf-dark}
-![growth under the found maps](figures/lt_found_growth_dark.gif)
+![growth under the found maps](figures/lt_X_found_growth_dark.gif)
 :::
 :::
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![re-generated Final](figures/lt_found_final_light.png)
+![re-generated Final](figures/lt_X_found_final_light.png)
 :::
 
 ::: {.pf-dark}
-![re-generated Final](figures/lt_found_final_dark.png)
+![re-generated Final](figures/lt_X_found_final_dark.png)
 :::
 :::
 
@@ -303,31 +303,99 @@ Description to be written.
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![found d](figures/lt_found_d_light.png)
+![found d](figures/lt_X_found_d_light.png)
 :::
 
 ::: {.pf-dark}
-![found d](figures/lt_found_d_dark.png)
+![found d](figures/lt_X_found_d_dark.png)
 :::
 :::
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![found a](figures/lt_found_a_light.png)
+![found a](figures/lt_X_found_a_light.png)
 :::
 
 ::: {.pf-dark}
-![found a](figures/lt_found_a_dark.png)
+![found a](figures/lt_X_found_a_dark.png)
 :::
 :::
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![found b](figures/lt_found_b_light.png)
+![found b](figures/lt_X_found_b_light.png)
 :::
 
 ::: {.pf-dark}
-![found b](figures/lt_found_b_dark.png)
+![found b](figures/lt_X_found_b_dark.png)
+:::
+:::
+
+:::
+
+::: {.pf-row}
+
+::: {.pf-cell}
+::: {.pf-light}
+![target letter L](figures/lt_L_target_light.png)
+:::
+
+::: {.pf-dark}
+![target letter L](figures/lt_L_target_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![growth under the found maps](figures/lt_L_found_growth_light.gif)
+:::
+
+::: {.pf-dark}
+![growth under the found maps](figures/lt_L_found_growth_dark.gif)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![re-generated Final](figures/lt_L_found_final_light.png)
+:::
+
+::: {.pf-dark}
+![re-generated Final](figures/lt_L_found_final_dark.png)
+:::
+:::
+
+:::
+
+::: {.pf-row}
+
+::: {.pf-cell}
+::: {.pf-light}
+![found d](figures/lt_L_found_d_light.png)
+:::
+
+::: {.pf-dark}
+![found d](figures/lt_L_found_d_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![found a](figures/lt_L_found_a_light.png)
+:::
+
+::: {.pf-dark}
+![found a](figures/lt_L_found_a_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![found b](figures/lt_L_found_b_light.png)
+:::
+
+::: {.pf-dark}
+![found b](figures/lt_L_found_b_dark.png)
 :::
 :::
 
@@ -419,8 +487,38 @@ Description to be written.
 Description to be written.
 :::
 
-::: {.stub}
-No Fourier-operator letter reconstruction exists yet.
+::: {.pf-row}
+
+::: {.pf-cell}
+::: {.pf-light}
+![target letter](figures/fno_letter_target_light.png)
+:::
+
+::: {.pf-dark}
+![target letter](figures/fno_letter_target_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![progression](figures/fno_letter_growth_light.gif)
+:::
+
+::: {.pf-dark}
+![progression](figures/fno_letter_growth_dark.gif)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![re-generated Final](figures/fno_letter_final_light.png)
+:::
+
+::: {.pf-dark}
+![re-generated Final](figures/fno_letter_final_dark.png)
+:::
+:::
+
 :::
 
 ::: {.stub}

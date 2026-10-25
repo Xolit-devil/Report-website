@@ -3,6 +3,7 @@ title: "Pattern Forcing"
 description: "How to draw on fish skin"
 image: thumb.png
 order: 1
+css: results.css
 image-alt: "A Gray-Scott pattern on a 64 by 64 grid"
 nocite: |
   @huang2024diffusionpde
@@ -38,24 +39,76 @@ The three approaches used are physics search [@kingma2015adam; @ledimet1986varia
 Introduction to be written.
 :::
 
-::: {layout-ncol=3}
-![noisy initials](figures/ps_noisy_initial.png)
+::: {.pf-row}
 
-![progression](figures/ps_true_growth.gif)
+::: {.pf-cell}
+::: {.pf-light}
+![noisy initials](figures/ps_noisy_initial_light.png)
+:::
 
-![True Final](figures/ps_true_final.png)
+::: {.pf-dark}
+![noisy initials](figures/ps_noisy_initial_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![progression](figures/ps_true_growth_light.gif)
+:::
+
+::: {.pf-dark}
+![progression](figures/ps_true_growth_dark.gif)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![True Final](figures/ps_true_final_light.png)
+:::
+
+::: {.pf-dark}
+![True Final](figures/ps_true_final_dark.png)
+:::
+:::
+
 :::
 
 ::: {.stub}
 Description to be written.
 :::
 
-::: {layout-ncol=3}
-![simple initials](figures/ps_found_initial.png)
+::: {.pf-row}
 
-![progression](figures/ps_found_growth.gif)
+::: {.pf-cell}
+::: {.pf-light}
+![simple initials](figures/ps_found_initial_light.png)
+:::
 
-![re-generated Final](figures/ps_found_final.png)
+::: {.pf-dark}
+![simple initials](figures/ps_found_initial_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![progression](figures/ps_found_growth_light.gif)
+:::
+
+::: {.pf-dark}
+![progression](figures/ps_found_growth_dark.gif)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![re-generated Final](figures/ps_found_final_light.png)
+:::
+
+::: {.pf-dark}
+![re-generated Final](figures/ps_found_final_dark.png)
+:::
+:::
+
 :::
 
 ::: {.stub}
@@ -68,60 +121,216 @@ Description to be written.
 Introduction to be written.
 :::
 
-::: {layout-ncol=3}
-![blob](figures/bn_blob_a.png)
+::: {.pf-row}
 
-![growth under the true maps](figures/bn_true_growth.gif)
-
-![True Final](figures/bn_true_final.png)
+::: {.pf-cell}
+::: {.pf-light}
+![blob](figures/bn_blob_a_light.png)
 :::
 
-::: {layout-ncol=3}
-![true d](figures/bn_true_d.png)
+::: {.pf-dark}
+![blob](figures/bn_blob_a_dark.png)
+:::
+:::
 
-![true a](figures/bn_true_a.png)
+::: {.pf-cell}
+::: {.pf-light}
+![growth under the true maps](figures/bn_true_growth_light.gif)
+:::
 
-![true b](figures/bn_true_b.png)
+::: {.pf-dark}
+![growth under the true maps](figures/bn_true_growth_dark.gif)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![True Final](figures/bn_true_final_light.png)
+:::
+
+::: {.pf-dark}
+![True Final](figures/bn_true_final_dark.png)
+:::
+:::
+
+:::
+
+::: {.pf-row}
+
+::: {.pf-cell}
+::: {.pf-light}
+![true d](figures/bn_true_d_light.png)
+:::
+
+::: {.pf-dark}
+![true d](figures/bn_true_d_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![true a](figures/bn_true_a_light.png)
+:::
+
+::: {.pf-dark}
+![true a](figures/bn_true_a_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![true b](figures/bn_true_b_light.png)
+:::
+
+::: {.pf-dark}
+![true b](figures/bn_true_b_dark.png)
+:::
+:::
+
 :::
 
 ::: {.stub}
 Description to be written.
 :::
 
-::: {layout-ncol=3}
-![blob](figures/bn_blob_b.png)
+::: {.pf-row}
 
-![growth under the found maps](figures/bn_found_growth.gif)
-
-![re-generated Final](figures/bn_found_final.png)
+::: {.pf-cell}
+::: {.pf-light}
+![blob](figures/bn_blob_b_light.png)
 :::
 
-::: {layout-ncol=3}
-![found d](figures/bn_found_d.png)
+::: {.pf-dark}
+![blob](figures/bn_blob_b_dark.png)
+:::
+:::
 
-![found a](figures/bn_found_a.png)
+::: {.pf-cell}
+::: {.pf-light}
+![growth under the found maps](figures/bn_found_growth_light.gif)
+:::
 
-![found b](figures/bn_found_b.png)
+::: {.pf-dark}
+![growth under the found maps](figures/bn_found_growth_dark.gif)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![re-generated Final](figures/bn_found_final_light.png)
+:::
+
+::: {.pf-dark}
+![re-generated Final](figures/bn_found_final_dark.png)
+:::
+:::
+
+:::
+
+::: {.pf-row}
+
+::: {.pf-cell}
+::: {.pf-light}
+![found d](figures/bn_found_d_light.png)
+:::
+
+::: {.pf-dark}
+![found d](figures/bn_found_d_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![found a](figures/bn_found_a_light.png)
+:::
+
+::: {.pf-dark}
+![found a](figures/bn_found_a_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![found b](figures/bn_found_b_light.png)
+:::
+
+::: {.pf-dark}
+![found b](figures/bn_found_b_dark.png)
+:::
+:::
+
 :::
 
 ::: {.stub}
 Description to be written.
 :::
 
-::: {layout-ncol=3}
-![target letter](figures/lt_target.png)
+::: {.pf-row}
 
-![growth under the found maps](figures/lt_found_growth.gif)
-
-![re-generated Final](figures/lt_found_final.png)
+::: {.pf-cell}
+::: {.pf-light}
+![target letter](figures/lt_target_light.png)
 :::
 
-::: {layout-ncol=3}
-![found d](figures/lt_found_d.png)
+::: {.pf-dark}
+![target letter](figures/lt_target_dark.png)
+:::
+:::
 
-![found a](figures/lt_found_a.png)
+::: {.pf-cell}
+::: {.pf-light}
+![growth under the found maps](figures/lt_found_growth_light.gif)
+:::
 
-![found b](figures/lt_found_b.png)
+::: {.pf-dark}
+![growth under the found maps](figures/lt_found_growth_dark.gif)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![re-generated Final](figures/lt_found_final_light.png)
+:::
+
+::: {.pf-dark}
+![re-generated Final](figures/lt_found_final_dark.png)
+:::
+:::
+
+:::
+
+::: {.pf-row}
+
+::: {.pf-cell}
+::: {.pf-light}
+![found d](figures/lt_found_d_light.png)
+:::
+
+::: {.pf-dark}
+![found d](figures/lt_found_d_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![found a](figures/lt_found_a_light.png)
+:::
+
+::: {.pf-dark}
+![found a](figures/lt_found_a_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![found b](figures/lt_found_b_light.png)
+:::
+
+::: {.pf-dark}
+![found b](figures/lt_found_b_dark.png)
+:::
+:::
+
 :::
 
 ::: {.stub}
@@ -134,24 +343,76 @@ Description to be written.
 Introduction to be written.
 :::
 
-::: {layout-ncol=3}
-![true initials](figures/fno_noisy_initial.png)
+::: {.pf-row}
 
-![progression](figures/fno_true_growth.gif)
+::: {.pf-cell}
+::: {.pf-light}
+![true initials](figures/fno_noisy_initial_light.png)
+:::
 
-![True Final](figures/fno_true_final.png)
+::: {.pf-dark}
+![true initials](figures/fno_noisy_initial_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![progression](figures/fno_true_growth_light.gif)
+:::
+
+::: {.pf-dark}
+![progression](figures/fno_true_growth_dark.gif)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![True Final](figures/fno_true_final_light.png)
+:::
+
+::: {.pf-dark}
+![True Final](figures/fno_true_final_dark.png)
+:::
+:::
+
 :::
 
 ::: {.stub}
 Description to be written.
 :::
 
-::: {layout-ncol=3}
-![FNO answer](figures/fno_found_initial.png)
+::: {.pf-row}
 
-![progression](figures/fno_found_growth.gif)
+::: {.pf-cell}
+::: {.pf-light}
+![FNO answer](figures/fno_found_initial_light.png)
+:::
 
-![re-generated Final](figures/fno_found_final.png)
+::: {.pf-dark}
+![FNO answer](figures/fno_found_initial_dark.png)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![progression](figures/fno_found_growth_light.gif)
+:::
+
+::: {.pf-dark}
+![progression](figures/fno_found_growth_dark.gif)
+:::
+:::
+
+::: {.pf-cell}
+::: {.pf-light}
+![re-generated Final](figures/fno_found_final_light.png)
+:::
+
+::: {.pf-dark}
+![re-generated Final](figures/fno_found_final_dark.png)
+:::
+:::
+
 :::
 
 ::: {.stub}

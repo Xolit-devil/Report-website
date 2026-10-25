@@ -1,0 +1,25 @@
+/* Results figures of Pattern Forcing: light/dark variants and a size cap.
+   Theme follows the site switch (html[data-mode]) and otherwise the system setting. */
+.pf-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.pf-cell { text-align: center; }
+.pf-cell figure { margin: 0; }
+.pf-cell img {
+  display: block;
+  width: 100%;
+  max-width: 136px;   /* size of a figure when the window is about 960 px wide (measured) */
+  height: auto;
+  margin: 0 auto;
+}
+.pf-cell figcaption { text-align: center; font-size: 0.85em; }
+.pf-dark { display: none; }
+html[data-mode="dark"] .pf-light { display: none; }
+html[data-mode="dark"] .pf-dark { display: block; }
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode="light"]) .pf-light { display: none; }
+  html:not([data-mode="light"]) .pf-dark { display: block; }
+}

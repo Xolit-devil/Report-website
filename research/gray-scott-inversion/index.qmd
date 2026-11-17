@@ -34,19 +34,20 @@ The three approaches used are physics search [@kingma2015adam; @ledimet1986varia
 
 ## Results
 
-### Physics Search
+### Physics Search {.heading-center}
 
-The goal is to find a simpler starting state than the true one that still grows into the observed final pattern, so the initial condition is found and simplified at the same time. This method searches directly through the Gray-Scott solver, so it needs no training.
 
-::: {.pf-row}
+The process which needs no learning is an adoptation of a variational algorithm, which manually searches throgh the set of all simple initial conditions (blobs, linees). It produces geometrically simple initial conditions, but works well only on the native Gray-Scott final states with spatially constant coefficients.
+
+::: {.pf-row data-label="Original"}
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![noisy initials](figures/ps_noisy_initial_light.png)
+![initials](figures/ps_noisy_initial_light.png)
 :::
 
 ::: {.pf-dark}
-![noisy initials](figures/ps_noisy_initial_dark.png)
+![initials](figures/ps_noisy_initial_dark.png)
 :::
 :::
 
@@ -72,9 +73,8 @@ The goal is to find a simpler starting state than the true one that still grows 
 
 :::
 
-The true starting state (step 50) is a noisy random field. The solver turns it into the true final pattern at step 300 in 250 steps, and only 50 pixels of that final pattern are observed.
 
-::: {.pf-row}
+::: {.pf-row data-label="Found"}
 
 ::: {.pf-cell}
 ::: {.pf-light}
@@ -108,13 +108,12 @@ The true starting state (step 50) is a noisy random field. The solver turns it i
 
 :::
 
-The search found a single blob, described by just 4 numbers (position, width, strength). Its growth over the same 250 steps reproduces the final pattern with a relative error of 0.049 (16x16 grid).
 
-### Blob growth
+### Diffusion Controller {.heading-center}
 
-Here the start is always the same fixed blob, and the goal is to find the parameter maps (d = diffusivity, a = feed, b = kill) that make it grow into a given final state. A diffusion model (DiffusionPDE-style prior) does this, and it is the most robust of the three approaches: one trained network handles every scene.
+This is a learnt U-net architecture and it also allows to find correct initial conditions and is scalable in contrast to physics search.
 
-::: {.pf-row}
+::: {.pf-row data-label="Original"}
 
 ::: {.pf-cell}
 ::: {.pf-light}
@@ -128,11 +127,11 @@ Here the start is always the same fixed blob, and the goal is to find the parame
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![growth under the true maps](figures/bn_true_growth_light.gif)
+![growth](figures/bn_true_growth_light.gif)
 :::
 
 ::: {.pf-dark}
-![growth under the true maps](figures/bn_true_growth_dark.gif)
+![growth](figures/bn_true_growth_dark.gif)
 :::
 :::
 
@@ -147,8 +146,7 @@ Here the start is always the same fixed blob, and the goal is to find the parame
 :::
 
 :::
-
-::: {.pf-row}
+::: {.pf-row data-label="Original maps"}
 
 ::: {.pf-cell}
 ::: {.pf-light}
@@ -182,9 +180,9 @@ Here the start is always the same fixed blob, and the goal is to find the parame
 
 :::
 
-The hidden true parameter maps (shown below as deviation from nominal) grow the blob into the true final pattern over 400 steps (32x32 grid).
 
-::: {.pf-row}
+
+::: {.pf-row data-label="Found"}
 
 ::: {.pf-cell}
 ::: {.pf-light}
@@ -198,11 +196,11 @@ The hidden true parameter maps (shown below as deviation from nominal) grow the 
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![growth under the found maps](figures/bn_found_growth_light.gif)
+![growth](figures/bn_found_growth_light.gif)
 :::
 
 ::: {.pf-dark}
-![growth under the found maps](figures/bn_found_growth_dark.gif)
+![growth](figures/bn_found_growth_dark.gif)
 :::
 :::
 
@@ -218,8 +216,7 @@ The hidden true parameter maps (shown below as deviation from nominal) grow the 
 
 :::
 
-::: {.pf-row}
-
+::: {.pf-row data-label="Found maps"}
 ::: {.pf-cell}
 ::: {.pf-light}
 ![found d](figures/bn_found_d_light.png)
@@ -252,9 +249,12 @@ The hidden true parameter maps (shown below as deviation from nominal) grow the 
 
 :::
 
-The maps found by the diffusion model grow the same blob into a re-generated final pattern with a relative error of 0.25. The found maps differ from the true ones, because many different parameter fields give the same pattern.
+With this architecture the generation of non-native distributions also becomes possible.
+Although far from perfect, the letters are recovered and are recognisable. Also important is that the found parameter fields are non-trivial and many different ones can be found.
+The difference between initial possible initial conditions allows for control of the found initial conditions.
 
-::: {.pf-row}
+
+::: {.pf-row data-label="X Generation"}
 
 ::: {.pf-cell}
 ::: {.pf-light}
@@ -268,27 +268,27 @@ The maps found by the diffusion model grow the same blob into a re-generated fin
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![growth under the found maps](figures/lt_X_found_growth_light.gif)
+![growth](figures/lt_X_found_growth_light.gif)
 :::
 
 ::: {.pf-dark}
-![growth under the found maps](figures/lt_X_found_growth_dark.gif)
+![growth](figures/lt_X_found_growth_dark.gif)
 :::
 :::
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![re-generated Final](figures/lt_X_found_final_light.png)
+![generated Final](figures/lt_X_found_final_light.png)
 :::
 
 ::: {.pf-dark}
-![re-generated Final](figures/lt_X_found_final_dark.png)
+![generated Final](figures/lt_X_found_final_dark.png)
 :::
 :::
 
 :::
 
-::: {.pf-row}
+::: {.pf-row data-label="X maps"}
 
 ::: {.pf-cell}
 ::: {.pf-light}
@@ -322,7 +322,7 @@ The maps found by the diffusion model grow the same blob into a re-generated fin
 
 :::
 
-::: {.pf-row}
+::: {.pf-row data-label="L Generation"}
 
 ::: {.pf-cell}
 ::: {.pf-light}
@@ -336,11 +336,11 @@ The maps found by the diffusion model grow the same blob into a re-generated fin
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![growth under the found maps](figures/lt_L_found_growth_light.gif)
+![growth](figures/lt_L_found_growth_light.gif)
 :::
 
 ::: {.pf-dark}
-![growth under the found maps](figures/lt_L_found_growth_dark.gif)
+![growth](figures/lt_L_found_growth_dark.gif)
 :::
 :::
 
@@ -356,7 +356,7 @@ The maps found by the diffusion model grow the same blob into a re-generated fin
 
 :::
 
-::: {.pf-row}
+::: {.pf-row data-label="L maps"}
 
 ::: {.pf-cell}
 ::: {.pf-light}
@@ -390,13 +390,13 @@ The maps found by the diffusion model grow the same blob into a re-generated fin
 
 :::
 
-The same kind of diffusion model is asked to grow a drawn letter from the blob over 100 steps (16x16). The letters come out recognisable but not exact: drawing a letter is harder than recreating a natural pattern.
 
-### FNO
+### Fourier Neural Operator {.heading-center}
 
-A Fourier neural operator (FNO) learns the inverse map and answers in a single forward pass. It is the fastest approach: seconds for a whole set of scenes, with no search per scene.
+While the Diffusion Controller needs multiple passes to generate the initial condition, the FNO has an advantage of only needing one forward pass, whcih hugely saves computational time.
+It can recreate both the native Gray-Scott patterns and selected shapes. 
 
-::: {.pf-row}
+::: {.pf-row data-label="Original"}
 
 ::: {.pf-cell}
 ::: {.pf-light}
@@ -430,9 +430,8 @@ A Fourier neural operator (FNO) learns the inverse map and answers in a single f
 
 :::
 
-The true starting state grows into the true final pattern; this is the pattern the operator has to explain.
 
-::: {.pf-row}
+::: {.pf-row data-label="Found"}
 
 ::: {.pf-cell}
 ::: {.pf-light}
@@ -463,20 +462,19 @@ The true starting state grows into the true final pattern; this is the pattern t
 ![re-generated Final](figures/fno_found_final_dark.png)
 :::
 :::
-
 :::
 
-From the observed final state the operator returns a starting state at step 50 whose growth over 250 steps matches the final with a relative error of 0.0015. It also checks 8 rotated and mirrored views of the input and polishes the answer briefly through the solver.
+Although in case of shapes the recovered parameter fields mirror the target trivially, unless additional selective techniqeus are applied.
 
-::: {.pf-row}
+::: {.pf-row data-label="FNO Plus Generation"}
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![cross: plus target](figures/fno_plus_target_light.png)
+![target](figures/fno_plus_target_light.png)
 :::
 
 ::: {.pf-dark}
-![cross: plus target](figures/fno_plus_target_dark.png)
+![target](figures/fno_plus_target_dark.png)
 :::
 :::
 
@@ -486,7 +484,7 @@ From the observed final state the operator returns a starting state at step 50 w
 :::
 
 ::: {.pf-dark}
-![growth from the blob under the answer](figures/fno_plus_growth_dark.gif)
+![growth](figures/fno_plus_growth_dark.gif)
 :::
 :::
 
@@ -502,7 +500,7 @@ From the observed final state the operator returns a starting state at step 50 w
 
 :::
 
-::: {.pf-row}
+::: {.pf-row data-label="FNO Plus maps"}
 
 ::: {.pf-cell}
 ::: {.pf-light}
@@ -526,16 +524,6 @@ From the observed final state the operator returns a starting state at step 50 w
 
 ::: {.pf-cell}
 ::: {.pf-light}
-![a](figures/fno_plus_a_light.png)
-:::
-
-::: {.pf-dark}
-![a](figures/fno_plus_a_dark.png)
-:::
-:::
-
-::: {.pf-cell}
-::: {.pf-light}
 ![b](figures/fno_plus_b_light.png)
 :::
 
@@ -544,20 +532,8 @@ From the observed final state the operator returns a starting state at step 50 w
 :::
 :::
 
-::: {.pf-cell}
-::: {.pf-light}
-![D](figures/fno_plus_D_light.png)
-:::
-
-::: {.pf-dark}
-![D](figures/fno_plus_D_dark.png)
-:::
-:::
-
-:::
-
-The target is a drawn cross ("plus") on the 32x32 grid, and the start is the usual blob in the middle. This example is not from a Fourier operator: it comes from the novelty search, which finds the four parameter maps (d, a, b and the diffusion scale D) by gradient search through the solver. The re-generated final after 300 steps matches the cross with a score (MCC) of 0.84. It is the "nsdp" arm of the novelty search, chosen as the successful example whose kill map b copies the target least (correlation r = -0.08).
-
 :::
 
 ::::
+
+:::

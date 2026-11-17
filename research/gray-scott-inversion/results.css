@@ -6,16 +6,26 @@
   gap: 1rem;
   margin: 1rem 0;
 }
+/* Row name on the left, in the body text colour. */
+.pf-row[data-label] { grid-template-columns: 5.5rem repeat(3, 1fr); }
+.pf-row[data-label]::before {
+  content: attr(data-label);
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  font-weight: 600;
+  color: inherit;
+}
 .pf-cell { text-align: center; }
-.pf-cell figure { margin: 0; }
+.pf-cell figure { margin: 0; display: flex; flex-direction: column-reverse }
 .pf-cell img {
   display: block;
   width: 100%;
-  max-width: 136px;   /* size of a figure when the window is about 960 px wide (measured) */
+  max-width: 200px;   /* size of a figure when the window is about 960 px wide (measured) */
   height: auto;
   margin: 0 auto;
 }
-.pf-cell figcaption { text-align: center; font-size: 0.85em; }
+.pf-cell figcaption { text-align: center; font-size: 0.85em; color: var(--accent); }
 .pf-dark { display: none; }
 html[data-mode="dark"] .pf-light { display: none; }
 html[data-mode="dark"] .pf-dark { display: block; }

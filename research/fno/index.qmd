@@ -2,7 +2,7 @@
 title: "FNO"
 description: "Description not written yet."
 image: thumb.png
-order: 5
+order: 2
 half: true
 image-alt: "Final fields of a dealloying surrogate model, used to train a neural operator"
 nocite: |

@@ -1,8 +1,9 @@
 ---
-title: "LMD inversion"
+title: "Diffusion Controller"
 description: "Description not written yet."
 image: thumb.png
-order: 4
+order: 3
+half: true
 image-alt: "Tantalum fraction in a simulated dealloying run"
 nocite: |
   @mccue2018pattern

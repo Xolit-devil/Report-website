@@ -2,7 +2,7 @@
 title: "Artificial Cell differentiation"
 description: "Description not written yet."
 image: thumb.png
-order: 2
+order: 5
 half: true
 image-alt: "Cells of a colony, marked by which of two movement modes they are in"
 nocite: |

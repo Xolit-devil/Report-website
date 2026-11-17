@@ -5,7 +5,6 @@ project:
     - "*.qmd"
     - "research/**/*.qmd"
   resources:
-    - design-compare.html
     - "research/*/thumb.png"
     - "research/*/banner.png"
     - "research/*/banner-over.png"
@@ -38,10 +37,9 @@ bibliography: references.bib
 
 format:
   html:
-    theme: [default, custom.scss, design-preview.scss]
+    theme: [default, custom.scss]
     include-in-header:
       - _mode-toggle.html
-      - _design-preview.html
     # "Comment on this page" link at the foot of every page.
     include-after-body: _page-issue.html
     page-layout: article

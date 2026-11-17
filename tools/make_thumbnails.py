@@ -7,7 +7,7 @@ whatever colour scheme is active, light or dark, without being regenerated.
 Where the pictures come from:
   gray-scott-inversion   banner: a Gray-Scott simulation run here (labyrinth regime); thumb: stored run
   cellular-automata      banner: a lattice-gas diffusion automaton run here; thumb: stored run
-  lmd-inversion          stored phase-field run
+  diffusion-controller   figure bn_true_final_light.png of the Pattern Forcing page (first blob example)
   fno                    stored training fields of the LMD surrogate that the FNO was trained on
   artificial-cell-differentiation   thesis figure modes_MDA_colony.png, recoloured
   artificial-cell-continuous-fields thesis ERK figure: network output (banner.png) under the
@@ -33,7 +33,7 @@ RATIO = BANNER[0] / BANNER[1]
 # Stored sources.
 GS_RUN = r"C:\Clean Projects\gs-model-browser\viewer\data\runs\ic__edm_baseline__n64_obs819_z120000.js"
 GS_SCENE = 0
-LMD_RUN = r"C:\Users\Yumpu\Desktop\Jack\Bachelor thesis\LMD\proto_2d\lines_n12_d38"
+BLOB_FIGURE = "bn_true_final_light.png"  # in research/gray-scott-inversion/figures
 CA_RUN = r"C:\Vscode\Gray-Scott solvers comparison\structures_lab\runs\A_bin_d4_template_none"
 CA_DENSITY = "0.30"
 CA_ALPHA = np.array([0.0, 0.55, 1.0, 0.25])  # empty, free material, assembled wall, compartment interior
@@ -103,11 +103,12 @@ def gray_scott():
     save(unit(v), "gray-scott-inversion", "banner", BANNER, smooth=True)
 
 
-def lmd():
-    z = np.load(sorted(glob.glob(os.path.join(LMD_RUN, "depth_*.npz")))[-1])
-    a = unit(z["cTa"])
-    save(a, "lmd-inversion", "thumb", THUMB, smooth=True)
-    save(widest_band(a), "lmd-inversion", "banner", BANNER, smooth=True)
+def diffusion_controller():
+    # The true final pattern of the first blob example on the Pattern Forcing page (blue on white: darker = higher).
+    fig = Image.open(os.path.join(SITE, "research", "gray-scott-inversion", "figures", BLOB_FIGURE)).convert("L")
+    a = 1 - unit(np.asarray(fig, float))
+    save(a, "diffusion-controller", "thumb", THUMB, smooth=True)
+    save(widest_band(a), "diffusion-controller", "banner", BANNER, smooth=True)
 
 
 def cellular_automata():
@@ -178,7 +179,7 @@ def cell_continuous_fields():
 
 if __name__ == "__main__":
     gray_scott()
-    lmd()
+    diffusion_controller()
     cellular_automata()
     fno()
     cell_differentiation()

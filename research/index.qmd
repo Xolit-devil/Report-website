@@ -1,5 +1,5 @@
 ---
-title: "Current Failures"
+title: "Investigations"
 listing:
   contents: "*/index.qmd"
   template: _banners.ejs

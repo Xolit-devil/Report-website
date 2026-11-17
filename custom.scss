@@ -2,7 +2,7 @@
 $accent: #8E82DC;
 
 $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$body-color: #091037;
+$body-color: #000000;
 $link-color: $accent;
 $navbar-bg: #fff;
 $navbar-fg: $body-color;
@@ -14,8 +14,8 @@ $navbar-hl: $accent;
 :root {
   color-scheme: light dark;
   --bg: #FFFFFF;        // page background
-  --surface: #E7EAF9;   // top bar and footer background
-  --fg: #091037;        // main text
+  --surface: #AEBCE7;   // top bar and footer background
+  --fg: #000000;        // main text
   --accent: #8E82DC;    // links, list pictures
   --rule: #AEBCE7;      // divider lines
   --hl: #8E82DC;        // highlighted text (.hl)
@@ -379,8 +379,8 @@ main.content:has(> .hero) {
     height: 85vh;
     min-height: 320px;
     // No frame: the picture dissolves into the page at the sides and the bottom.
-    -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent), linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
-    mask-image: linear-gradient(to bottom, #000 45%, transparent), linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent), linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(to bottom, #000 65%, transparent), linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
     -webkit-mask-composite: source-in;
     mask-composite: intersect;
   }
@@ -390,13 +390,64 @@ main.content:has(> .hero) {
     transform: translate(-50%, -100%);
     padding: 0 clamp(1.25rem, 3vw, 2.5rem);
     margin-bottom: -3rem;
+    text-align: left;
 
     .title {
       font-size: clamp(1.8rem, 4vw, 3rem);
+      text-align: left;
     }
+  }
+  // The column is centred, so shift these left to the title's left edge.
+  // Two columns side by side: text and literature left, results right.
+  > .split {
+    @include break-out;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: clamp(1.5rem, 4vw, 4rem);
+    padding: 0 clamp(1.25rem, 3vw, 2.5rem);
+    text-align: left;
+
+    // Headings start flush with the top of their column.
+    h2 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  > p,
+  > .stub,
+  > section {
+    position: relative;
+    left: min(0px, calc(-1 * (50vw - 350px - 1.25rem - clamp(1.25rem, 3vw, 2.5rem))));
+    max-width: 700px;
+    text-align: left;
   }
 }
 
 #title-block-header {
+  text-align: center;
+
+  .description {
+    font-style: italic;
+  }
+}
+
+
+// Delete the native scrolling bar
+
+html {
+  scrollbar-width: none;        // Firefox
+  -ms-overflow-style: none;     // old Edge
+}
+html::-webkit-scrollbar {
+  display: none;                // Chrome, Edge, Safari
+}
+
+// Quarto puts the class on the wrapping <section>, so only centre its heading.
+section.heading-center > :is(h1, h2, h3, h4, h5, h6) {
   text-align: center;
 }
